@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Súper Mario Bros: El Juego</title>
+    <link rel='shortcut icon' href='Assets/IMG/Home/icon.png' />
+    <link rel='stylesheet' href='Assets/CSS/style-game.css' />
+  </head>
+  <body>
+    <canvas></canvas>
+    <section id='container'>
+      <section id='score'></section>
+      <section id='timer'></section>
+      <section id='lives'>
+        <img
+          src='Assets/IMG/Imagen-Game/vidaMario.png'
+          alt='lives:'
+          id='liveicon'
+        />
+        <p id='nofl'></p>
+      </section>
+      <section id='gameover'>
+        <p class='texto'>GAME OVER</p>
+        <p class='texto' id='restart'>Press Ctrl + R to restart</p>
+      </section>
+    </section>
+    <button id='audio' class='btnStyle' onclick='audioplay()'>Encender Musica</button>
+    <button id='btn-salirPagina' class='btnStyle btnSalir'>Salir del Juego</button>
+    <script src='Assets/JS/script-game.js'></script>
+  </body>
+</html>
