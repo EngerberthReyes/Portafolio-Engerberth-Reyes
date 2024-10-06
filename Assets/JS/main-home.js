@@ -172,3 +172,87 @@ containerBtn.addEventListener("click", () => {
     transicionOscuro();
   }
 });
+
+const preferenciasDeColor = window.matchMedia("(prefers-color-scheme: dark)");
+
+const aplicarTema = (esOscuro) => {
+  if (esOscuro) {
+    // Modo Oscuro
+    containerBtn.style.justifyContent = "flex-end";
+    containerBtn.style.backgroundColor = "#000000";
+    containerBtn.style.outline = "2px solid #ffffff";
+    body.classList.add("dark-mode");
+    header.classList.add("dark-mode");
+    header.style.backgroundColor = "#0f0f0f";
+
+    articuloPrincipal.forEach((elemento) => {
+      elemento.style.backgroundColor = "#000000";
+      elemento.style.color = "#ffffff";
+      elemento.style.borderRadius = "20px";
+    });
+
+    articuloPrincipalDos.forEach((elemento) => {
+      elemento.style.backgroundColor = "#000000";
+      elemento.style.color = "#ffffff";
+      elemento.style.borderRadius = "20px";
+    });
+
+    imagenesArticulos.forEach((elemento) => {
+      elemento.style.boxShadow = "0px 0px 10px 0 #fdfdfd";
+    });
+
+    header.style.boxShadow = "rgba(255, 255, 255, 0.46) 0px 0px 13px";
+
+    linkRedireccionar.forEach((elemento) => {
+      elemento.style.outline = "2px solid #ffffff";
+      elemento.classList.add("dark-mode");
+    });
+
+    transicionOscuro();
+  } else {
+    // Modo Claro
+    containerBtn.style.backgroundColor = "#fdfdfd";
+    containerBtn.style.outline = "2px solid #000000";
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode");
+    header.classList.remove("dark-mode");
+    header.classList.add("light-mode");
+    header.style.backgroundColor = "#fdfdfd";
+
+    articuloPrincipal.forEach((elemento) => {
+      elemento.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+      elemento.style.borderRadius = "20px";
+      elemento.style.backgroundColor = "#ffdda88a";
+      elemento.style.color = "#000000";
+      elemento.style.outline = "none";
+    });
+
+    articuloPrincipalDos.forEach((elemento) => {
+      elemento.style.backgroundColor = "#ffdda88a";
+      elemento.style.color = "#000000";
+      elemento.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+      elemento.style.borderRadius = "20px";
+      elemento.style.outline = "none";
+    });
+
+    imagenesArticulos.forEach((elemento) => {
+      elemento.style.boxShadow = "0px 0px 10px 0 #000000";
+    });
+
+    header.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+
+    linkRedireccionar.forEach((elemento) => {
+      elemento.style.outline = "2px solid #000000";
+      elemento.classList.remove("dark-mode");
+      elemento.classList.add("light-mode");
+    });
+
+    transicionClaro();
+  }
+};
+
+aplicarTema(preferenciasDeColor.matches);
+
+preferenciasDeColor.addEventListener("change", (event) => {
+  aplicarTema(event.matches);
+});
