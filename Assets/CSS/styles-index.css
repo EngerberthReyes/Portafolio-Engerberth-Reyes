@@ -199,7 +199,7 @@ a:hover {
 }
 
 .contenedor-imagen-dos {
-  background: url(../IMG/Banner/Banner-Super-Mario-Bros.png) center center fixed;
+  background: url(../IMG/Home/apartadolegal.png) center center fixed;
   background-size: cover;
 }
 
@@ -208,13 +208,13 @@ a:hover {
   background-size: cover;
 }
 
-.contenedor-imagen-cinco {
-  background: url(../IMG/Home/CMS.png) center center fixed;
+.contenedor-imagen-cuatro {
+  background: url(../IMG/Home/apartadolegal.png) center center fixed;
   background-size: cover;
 }
 
-.contenedor-imagen-cuatro {
-  background: url(../IMG/Home/CMS.png) center center fixed;
+.contenedor-imagen-cinco {
+  background: url(../IMG/Home/bibliotecavirtual.PNG) center center fixed;
   background-size: cover;
 }
 
